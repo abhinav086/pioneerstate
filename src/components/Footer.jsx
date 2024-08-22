@@ -17,10 +17,7 @@ const Footer = () => {
       allowFullScreen=""
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-
-
-
+      > </iframe>
       </VStack>
       <Stack direction={['column','row']} textColor={'white'} w={'full'} p={4} alignItems={'center'} justifyContent={'space-around'} backgroundImage={'https://img.freepik.com/premium-photo/black-wooden-texture-backgrounds-graphic-design-digital-art-parquet-wallpaper-soft-blur_41691-6280.jpg'}>
      {/* <Heading p={4}>Shri Ram Timber&Paints </Heading> */}

@@ -46,14 +46,14 @@ const Makers = () => {
         w={"full"}
         textAlign={"center"}
         padding={4}
-        bgColor={"#fdba74"}
+        color={'#914F1E'} bgColor={'#DEAC80'}
         rounded={"lg"}
         letterSpacing={"widest"}
       >
         Our Happy Clients
       </Heading>
       <MakerCard
-        img={'https://media.licdn.com/dms/image/C5612AQHbhgqosPUvZA/article-cover_image-shrink_600_2000/0/1520155646670?e=2147483647&v=beta&t=7fk4PlOR_Tet5UbNbqYPJM_KAu6JVmuj7hWZp9pjdgs'}
+        img={'https://kleosafrica.com/blog/wp-content/uploads/2019/10/customers.jpg'}
         
         name={"Mr Abhinav"}
         desc={

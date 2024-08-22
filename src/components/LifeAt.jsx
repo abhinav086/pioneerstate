@@ -12,7 +12,7 @@ import c8 from '../images/c8.jpeg'
 const LifeAt = () => {
   return (
    <VStack spacing={4} padding={8}  width="100%"  >
-    <Heading w={'full'} textAlign={'center'} padding={4} bgColor={'#fdba74'} rounded={'lg'} letterSpacing={'widest'}>YOUR PROPERTIES</Heading>
+    <Heading w={'full'} textAlign={'center'} padding={4} color={'#914F1E'} bgColor={'#DEAC80'} rounded={'lg'} letterSpacing={'widest'}>YOUR PROPERTIES</Heading>
     <HStack w={'100%'}  justifyContent={'center'}  flexWrap={'wrap'} >
     <Image src={c1} height={[32,64]} width={[32,64]} objectFit={'cover'} shadow={'xl'} className='homegal'  rounded={'lg'}/>
     <Image src={c2} height={[32,64]} width={[32,64]} objectFit={'cover'} shadow={'xl'} className='homegal' rounded={'lg'}/>

@@ -5,7 +5,7 @@ import React from 'react'
 const Brands = () => {
   return (
    <VStack spacing={4} padding={8}  width="100%">
-    <Heading w={'full'} textAlign={'center'} padding={4}  bgColor={'#fdba74'} rounded={'lg'} letterSpacing={'widest'}>Types of Property We sell</Heading>
+    <Heading w={'full'} textAlign={'center'} padding={4} color={'#914F1E'} bgColor={'#DEAC80'} rounded={'lg'} letterSpacing={'widest'}>Types of Property We sell</Heading>
     <HStack w={['100%','90%']} spacing={[4,8]} overflowX={'scroll'} overflowY={'hidden'}   flexWrap={'nowrap'} >
     <Image src={'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg'} height={[16,32]} width={[16,32]} objectFit={'contain'} shadow={'xl'} className='homegal'  rounded={'lg'}/>
     <Image src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYC_j0cez1zkj6vg-7AXTynmtAQPQKTcSHLw&s'} height={[16,32]} width={[16,32]} objectFit={'contain'} shadow={'xl'} className='homegal' rounded={'lg'}/>

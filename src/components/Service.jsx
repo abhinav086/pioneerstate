@@ -17,7 +17,7 @@ const ProductCard = ({img,title})=>{
           bg="rgba(0,0,0,0.5)" /* Adjust brightness here */
         >
           <Text  fontSize="xl" mb={2}>{title}</Text>
-          <Text borderBottom={'1px'}><a href='#'>See Material Used</a></Text>
+          <Text borderBottom={'1px'}><a href='#'> See Material Used</a></Text>
         </Box>
       </Stack>
     </CardBody>
