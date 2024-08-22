@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.navlink:hover{
+border-bottom: 2px solid gray;
+}
+.homegal:hover{
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+ .card-item {
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative;
+  /* z-index: 10; */
+}
+.card-item img {
+  width: 100%;
+  height: 100%;
+  transition: 0.4s ease-in;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  box-shadow: 0px -100px 90px 10px grey inset;
+}
+.card-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition: 0.5s ease-in-out;
+  color: #fff;
+  padding: 10px;
+}
+
+.card-content p {
+  color: #cecece;
+  transition: 0.5s ease-in-out;
+}
+
+.card-content .info {
+  display: none;
+  transition: 0.5s ease-in-out;
+}
+
+.card-item:hover img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.card-item:hover .card-content {
+  color: #000;
+  top: 10px;
+  left: 10px;
+}
+.card-item:hover p {
+  color: #313131;
+ 
+}
+.card-item:hover .info {
+  display: block;
+  
+}
+.card-item:hover{
+  cursor: pointer;
+  /* transform: scale(1.1); */
+
+}
+
+.card:hover{
+  cursor: pointer;
+}
+
+ .details-container p:hover{
+  /* color: white !important; */
+}
+
+/* .card-item:hover + .details-container{
+  display: flex;
+}  */
