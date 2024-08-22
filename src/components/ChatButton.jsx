@@ -18,7 +18,7 @@ const ChatButton = () => {
   
   const  handleClick = () => {
     // Replace '123456789' with the recipient's phone number
-    const phoneNumber = '8800464310';
+    const phoneNumber = '7292014837';
 
     // Replace 'Hello, how can I help you?' with your desired message
     
