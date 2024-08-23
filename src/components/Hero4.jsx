@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { FaPhone, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const Hero = () => {
+const Hero4 = () => {
 
   const images = [
-    'https://mpghardware.com/img/s4.jpg', 'https://mpghardware.com/img/s1.jpg', 'https://mpghardware.com/img/s3.jpg', 'https://img.staticmb.com/mbcontent/images/crop/uploads/2023/1/kitchen-design-ideas_0_1200.jpg'
+    'https://images.pexels.com/photos/1694360/pexels-photo-1694360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [index, setIndex] = useState(0);
@@ -52,7 +52,7 @@ const Hero = () => {
           <aside>
             <CardBody>
               <Heading size={'lg'} className='heroHeading'>
-                Pioneer Venture
+               Houses team
               </Heading>
 
               <Text py='4'>
@@ -80,7 +80,7 @@ const Hero = () => {
               </Flex>
               <Button variant={'outline'} mt={4} >
                 <a href='https://maps.app.goo.gl/tBfynaydUY8Htwpi8' target="_blank">
-                  📍 Sector 62, Noida
+                  📍 Sector 61, Noida
                 </a>
               </Button>
             </CardBody>
@@ -96,11 +96,11 @@ const Hero = () => {
 
               <HStack>
                 <FaUser />
-                <Text fontWeight={'bolder'}>Ankita </Text>
+                <Text fontWeight={'bolder'}>Abhinav </Text>
               </HStack>
               <HStack>
                 <FaPhone />
-                <Text fontWeight={'bolder'}>88263###3331</Text>
+                <Text fontWeight={'bolder'}>8363###3331</Text>
               </HStack>
             </VStack>
           </CardFooter>
@@ -110,4 +110,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero4
