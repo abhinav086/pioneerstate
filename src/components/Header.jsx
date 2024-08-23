@@ -29,9 +29,9 @@ import {
   FaSearch,
   FaSearchLocation,
   FaSignOutAlt,
+  FaUpload,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import sls from "../images/sls.png";
 import { MdMenu } from "react-icons/md";
 
 const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
@@ -92,7 +92,7 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
         </Link>
         <Link to="/contact">
           <HStack mx={4} className="navlink">
-            <FaPhone /> <Text>Upload Property</Text>
+            <FaUpload /> <Text>Upload Property</Text>
           </HStack>{" "}
         </Link>
       </Flex>
@@ -128,7 +128,7 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
               </Link>
               <Link to="/contact">
                 <HStack mx={4} className="navlink">
-                  <FaPhone /> <Text>Upload Property</Text>
+                  <FaUpload /> <Text>Upload Property</Text>
                 </HStack>{" "}
               </Link>
             </VStack>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Hero3 = () => {
 
   const images = [
-    'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2','https://img.freepik.com/free-photo/model-house-project-blueprints_273609-16397.jpg?t=st=1724406898~exp=1724410498~hmac=127d596b7dbed61cbdd4683d19ef5553c836ca832da4cd55accb8ad54341d9cb&w=1800'
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [index, setIndex] = useState(0);

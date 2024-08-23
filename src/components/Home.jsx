@@ -14,13 +14,13 @@ import Hero4 from './Hero4'
 const Home = () => {
   return (
    <>
+   <LifeAt/>
    <Hero/>
    <Hero2/>
    <Hero3/>
    <Hero4/>  
    <Brands/>
    <Service/>
-   <LifeAt/>
    <Makers/>
    <ChatButton />
    <Footer/>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Hero4 = () => {
 
   const images = [
-    'https://images.pexels.com/photos/1694360/pexels-photo-1694360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+    'https://images.pexels.com/photos/1694360/pexels-photo-1694360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2','https://img.freepik.com/free-photo/house-isolated-field_1303-23773.jpg?t=st=1724406960~exp=1724410560~hmac=bd7ba40a457afd2b432c8d896edea6290202df15df7e339b8a279877b021a421&w=1800'
   ];
   const [currentImage, setCurrentImage] = useState(images[0]);
   const [index, setIndex] = useState(0);
