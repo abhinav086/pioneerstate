@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import { FaPhone, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const Hero = () => {
 
+const Hero = () => {
   const images = [
     'https://mpghardware.com/img/s4.jpg', 'https://mpghardware.com/img/s1.jpg', 'https://mpghardware.com/img/s3.jpg', 'https://img.staticmb.com/mbcontent/images/crop/uploads/2023/1/kitchen-design-ideas_0_1200.jpg'
   ];
@@ -24,18 +24,18 @@ const Hero = () => {
     setCurrentImage(images[index]);
   }, [index]);
 
-
   return (
     <section>
 
-      <Card m={['2', '8']}
-
+      <Card
+         m={['2', '8']}
+        mb={['2', '4']}
         direction={{ base: 'column', sm: 'row' }}
         overflow='hidden'
-        shadow={'lg'}
+        shadow={'2xl'}
         h={['100%', '100%']}
         boxSizing='border-box'
-        mt={['30vh', '25vh']}
+        mt={['14', '16']}
 
 
       >
