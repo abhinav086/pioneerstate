@@ -92,7 +92,7 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
         </Link>
         <Link to="/contact">
           <HStack mx={4} className="navlink">
-            <FaUpload /> <Text>Upload Property</Text>
+            <FaUpload /> <Text>Post Property</Text>
           </HStack>{" "}
         </Link>
       </Flex>
@@ -128,7 +128,7 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
               </Link>
               <Link to="/contact">
                 <HStack mx={4} className="navlink">
-                  <FaUpload /> <Text>Upload Property</Text>
+                  <FaUpload /> <Text>Post Property</Text>
                 </HStack>{" "}
               </Link>
             </VStack>
