@@ -53,7 +53,7 @@ function Form() {
     setError('');
 
     try {
-      const response = await fetch('https://imgbackend-i92h.onrender.com/api/properties', {
+      const response = await fetch('https://estate-backend-btwr.onrender.com/api/properties', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

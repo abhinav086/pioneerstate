@@ -10,7 +10,7 @@ function PropertiesList() {
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('https://imgbackend-i92h.onrender.com/api/properties');
+      const response = await fetch('https://estate-backend-btwr.onrender.com/api/properties');
       const data = await response.json();
       setProperties(data);
     } catch (error) {
@@ -20,7 +20,7 @@ function PropertiesList() {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://imgbackend-i92h.onrender.com/api/properties/${id}`, {
+      const response = await fetch(`https://estate-backend-btwr.onrender.com/api/properties/${id}`, {
         method: 'DELETE',
       });
 
