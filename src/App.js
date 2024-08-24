@@ -3,7 +3,8 @@ import Home from "./components/Home";
 import Header from "./components/Header";
 import Aboutus from "./components/Aboutus";
 import Gallary from "./components/Gallary";
-import Contact from "./components/Contact";
+import Form from './components/Form';
+import PropertiesList from './components/PropertiesList';
 
 function App() {
   
@@ -15,7 +16,8 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/aboutus" element={<Aboutus/>}/>
       <Route path="/gallery" element={<Gallary/>}/>
-      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/contact" element={<Form/>} />
+        <Route path="/properties" element={<PropertiesList/>} />
     </Routes>
    </Router>
  
