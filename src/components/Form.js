@@ -62,7 +62,7 @@ function Form() {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:4000/api/properties', {
+      const response = await fetch('https://imgbackend-6dgr.onrender.com/api/properties', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
