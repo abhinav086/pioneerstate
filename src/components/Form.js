@@ -9,17 +9,26 @@ function Form() {
     areaInSqFt: '',
     price: '',
     images: [],
+    type: '',
+    description: ''  // Add a field for property description
   });
 
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
-  const navigate = useNavigate(); // Used for navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  const handleTypeChange = (selectedType) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      type: selectedType,
     }));
   };
 
@@ -53,12 +62,18 @@ function Form() {
     setError('');
 
     try {
-      const response = await fetch('https://imgbackend-6dgr.onrender.com/api/properties', {
+      const response = await fetch('http://localhost:4000/api/properties', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          areaInSqFt: Number(formData.areaInSqFt), // Ensure area is a number
+          price: Number(formData.price),
+          type: formData.type,
+          description: formData.description.trim() // Trim spaces from description
+        }),
       });
 
       if (response.ok) {
@@ -69,6 +84,8 @@ function Form() {
           areaInSqFt: '',
           price: '',
           images: [],
+          type: '',
+          description: ''  // Reset description
         });
       } else {
         const errorData = await response.json();
@@ -87,7 +104,7 @@ function Form() {
       <form className="form-container" onSubmit={handleSubmit}>
         <h2>Upload Property</h2>
         {error && <div className="error-message">{error}</div>}
-        {/* Form fields */}
+
         <div className="form-group">
           <label htmlFor="name">Property Name</label>
           <input
@@ -99,6 +116,24 @@ function Form() {
             required
           />
         </div>
+
+        {/* Chips for selecting the property type */}
+        <div className="form-group">
+          <label>Property Type</label>
+          <div className="chips">
+            {['Residential Apartment', 'Independent Floor', 'Residential Land', 'Studio Apartment'].map((type) => (
+              <button
+                type="button"
+                key={type}
+                className={`chip ${formData.type === type ? 'selected' : ''}`}
+                onClick={() => handleTypeChange(type)}
+              >
+                {type}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="form-group">
           <label htmlFor="location">Location</label>
           <input
@@ -110,6 +145,7 @@ function Form() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="areaInSqFt">Area (Sq Ft)</label>
           <input
@@ -121,6 +157,7 @@ function Form() {
             required
           />
         </div>
+
         <div className="form-group">
           <label htmlFor="price">Price</label>
           <input
@@ -132,6 +169,19 @@ function Form() {
             required
           />
         </div>
+
+        <div className="form-group">
+          <label htmlFor="description">Description (under 50 words)</label>
+          <textarea
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            maxLength={250} // Approximate 50 words
+            placeholder="Enter property description (under 50 words)"
+          />
+        </div>
+
         <div className="form-group">
           <label htmlFor="images">Upload Images</label>
           <input
@@ -144,14 +194,14 @@ function Form() {
             required
           />
         </div>
+
         <button className="view-properties-btn" type="submit" disabled={uploading}>
           {uploading ? 'Uploading...' : 'Submit Property'}
         </button>
         <button className="view-properties-btn" onClick={() => navigate('/properties')}>
-        View All Properties
-      </button>
+          View All Properties
+        </button>
       </form>
-
     </div>
   );
 }

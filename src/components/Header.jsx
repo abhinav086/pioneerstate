@@ -19,22 +19,16 @@ import {
   Input,
 } from "@chakra-ui/react";
 import {
-  FaDashcube,
-  FaHome,
-  FaInfoCircle,
-  FaLocationArrow,
-  FaLock,
-  FaPhone,
   FaPhotoVideo,
-  FaSearch,
-  FaSearchLocation,
-  FaSignOutAlt,
   FaUpload,
+  FaSearch,
+  FaHome,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
+import { FaHouse } from "react-icons/fa6";
 
-const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
+const Header = ({ searchQuery, setSearchQuery, placeholderText = "Search by Name" }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const headerStyle = {
@@ -61,12 +55,15 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
         <Link to="/">
           <Heading fontSize={'32px'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕰𝖘𝖙𝖆𝖙𝖊</Heading>
         </Link>
+        {/* Search Bar */}
         <InputGroup maxW="md" mx="auto">
           <InputLeftElement pointerEvents="none">
             <FaSearch color="gray.300" />
           </InputLeftElement>
           <Input
             placeholder={placeholderText}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             borderRadius="full"
             variant="outline"
             focusBorderColor="teal.500"
@@ -80,9 +77,9 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
         fontSize={"xl"}
         align="center"
       >
-        <Link to="/aboutus">
+        <Link to="/properties">
           <HStack mx={4} className="navlink">
-            <FaInfoCircle /> <Text>About Us</Text>
+            <FaHouse /> <Text>Properties</Text>
           </HStack>{" "}
         </Link>
         <Link to="/gallery">
@@ -108,7 +105,6 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
           <DrawerHeader>
            <Heading textColor={'white'} fontSize={'md'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕰𝖘𝖙𝖆𝖙𝖊</Heading>
           </DrawerHeader>
-
           <DrawerBody>
             <VStack spacing={12} onClick={onClose}>
               <Link to="/">
@@ -116,9 +112,9 @@ const Header = ({ placeholderText = "Search by Type, Name, Size..." }) => {
                   <FaHome /> <Text>Home</Text>
                 </HStack>{" "}
               </Link>
-              <Link to="/aboutus">
+              <Link to="/properties">
                 <HStack mx={4} className="navlink">
-                  <FaInfoCircle /> <Text>About Us</Text>
+                  <FaHouse /> <Text>Properties</Text>
                 </HStack>{" "}
               </Link>
               <Link to="/gallery">
