@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ImageSlider from './ImageSlider'; // Import the ImageSlider component
 import '../components/PropertiesList.css';
 
 function PropertiesList({ searchQuery }) {
@@ -54,20 +55,14 @@ function PropertiesList({ searchQuery }) {
           {filteredProperties.length > 0 ? (
             filteredProperties.map((property) => (
               <div key={property._id} className="property-card">
-                <div className="property-image">
-                  {property.images && property.images.length > 0 ? (
-                    <img src={property.images[0].base64} alt={property.name} />
-                  ) : (
-                    <p>No Image Available</p>
-                  )}
-                </div>
+                <ImageSlider images={property.images || []} />
                 <div className="property-info">
                   <h3>{property.name}</h3>
-                  <p>Type: {property.type}</p> {/* Display property type */}
+                  <p>Type: {property.type}</p>
                   <p>Location: {property.location}</p>
                   <p>Area: {property.areaInSqFt} Sq Ft</p>
                   <p>Price: ₹{property.price}/-</p>
-                  <p>{property.description}</p> {/* Display property description */}
+                  <p>{property.description}</p>
                   <button
                     className="delete-button"
                     onClick={() => handleDelete(property._id)}

@@ -4,7 +4,7 @@
   margin-bottom: auto;
   margin-left: 120px;
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   max-height: 800px;
   overflow-y: scroll;
 }
@@ -55,11 +55,15 @@
 
 .property-info h3 {
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.6em; /* Increase font size for prominence */
+  font-weight: bold; /* Make the name bold */
+  color: #333; /* Darker color for better readability */
 }
 
 .property-info p {
   margin: 8px 0;
+  font-size: 1em; /* Standardize font size for text below the name */
+  color: #666; /* Lighter color for description text */
 }
 
 /* Style for the delete button to make it resemble a chip */
@@ -67,7 +71,7 @@
   background-color: rgba(211, 211, 211, 0.591); /* Light grey background */
   color: black;
   border: none;
-  width:fit-content;
+  width: fit-content;
   border-radius: 20px; /* Rounded corners to make it chip-like */
   padding: 10px 20px;
   cursor: pointer;

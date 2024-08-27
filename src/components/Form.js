@@ -8,13 +8,14 @@ function Form() {
     location: '',
     areaInSqFt: '',
     price: '',
-    images: [],
+    images: [], // Array to store images
     type: '',
-    description: ''  // Add a field for property description
+    description: '',
   });
 
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
+  const [selectMorePrompt, setSelectMorePrompt] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -33,7 +34,14 @@ function Form() {
   };
 
   const handleImageChange = (e) => {
-    const files = Array.from(e.target.files);
+    const files = Array.from(e.target.files); // Convert FileList to Array
+    if (files.length === 1) {
+      setSelectMorePrompt('Please select more images.');
+    } else {
+      setSelectMorePrompt('');
+    }
+
+    // Convert files to base64 and update state
     const promises = files.map((file) => {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -47,7 +55,7 @@ function Form() {
       .then((base64Images) => {
         setFormData((prevData) => ({
           ...prevData,
-          images: base64Images,
+          images: [...prevData.images, ...base64Images], // Append new images
         }));
       })
       .catch((error) => {
@@ -69,10 +77,10 @@ function Form() {
         },
         body: JSON.stringify({
           ...formData,
-          areaInSqFt: Number(formData.areaInSqFt), // Ensure area is a number
+          areaInSqFt: Number(formData.areaInSqFt),
           price: Number(formData.price),
           type: formData.type,
-          description: formData.description.trim() // Trim spaces from description
+          description: formData.description.trim(),
         }),
       });
 
@@ -85,7 +93,7 @@ function Form() {
           price: '',
           images: [],
           type: '',
-          description: ''  // Reset description
+          description: '',
         });
       } else {
         const errorData = await response.json();
@@ -117,7 +125,6 @@ function Form() {
           />
         </div>
 
-        {/* Chips for selecting the property type */}
         <div className="form-group">
           <label>Property Type</label>
           <div className="chips">
@@ -177,7 +184,7 @@ function Form() {
             name="description"
             value={formData.description}
             onChange={handleChange}
-            maxLength={250} // Approximate 50 words
+            maxLength={250}
             placeholder="Enter property description (under 50 words)"
           />
         </div>
@@ -193,12 +200,31 @@ function Form() {
             onChange={handleImageChange}
             required
           />
+          {selectMorePrompt && <p className="prompt-message">{selectMorePrompt}</p>}
+        </div>
+
+        {/* Image Preview */}
+        <div className="image-preview">
+          {formData.images.length > 0 &&
+            formData.images.map((image, index) => (
+              <img
+                key={index}
+                src={image.base64}
+                alt={`Uploaded preview ${index + 1}`}
+                width="100px"
+                style={{ margin: '5px' }}
+              />
+            ))}
         </div>
 
         <button className="view-properties-btn" type="submit" disabled={uploading}>
           {uploading ? 'Uploading...' : 'Submit Property'}
         </button>
-        <button className="view-properties-btn" onClick={() => navigate('/properties')}>
+        <button
+          className="view-properties-btn"
+          type="button"
+          onClick={() => navigate('/properties')}
+        >
           View All Properties
         </button>
       </form>
