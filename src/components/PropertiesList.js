@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import ImageSlider from './ImageSlider'; // Import the ImageSlider component
+import ImageSlider from './ImageSlider'; 
 import '../components/PropertiesList.css';
+import LifeAt from './LifeAt';
 
 function PropertiesList({ searchQuery }) {
   const [properties, setProperties] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   useEffect(() => {
     fetchProperties();
@@ -31,7 +33,7 @@ function PropertiesList({ searchQuery }) {
 
       if (response.ok) {
         alert('Property deleted successfully!');
-        fetchProperties(); // Refresh the list after deletion
+        fetchProperties(); 
       } else {
         alert('Failed to delete property.');
       }
@@ -41,40 +43,49 @@ function PropertiesList({ searchQuery }) {
     }
   };
 
-  // Filter properties based on the search query
-  const filteredProperties = properties.filter((property) =>
-    property.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    property.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    property.location.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredProperties = properties.filter((property) => {
+    const matchesSearchQuery = property.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               property.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                               property.location.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesCategory = selectedCategory === '' || property.type.toLowerCase() === selectedCategory.toLowerCase();
+
+    return matchesSearchQuery && matchesCategory;
+  });
 
   return (
-    <div className="properties-list-container">
-      <div className="scrollable-container">
-        <div className="properties-list">
-          {filteredProperties.length > 0 ? (
-            filteredProperties.map((property) => (
-              <div key={property._id} className="property-card">
-                <ImageSlider images={property.images || []} />
-                <div className="property-info">
-                  <h3>{property.name}</h3>
-                  <p>Type: {property.type}</p>
-                  <p>Location: {property.location}</p>
-                  <p>Area: {property.areaInSqFt} Sq Ft</p>
-                  <p>Price: ₹{property.price}/-</p>
-                  <p>{property.description}</p>
-                  <button
-                    className="delete-button"
-                    onClick={() => handleDelete(property._id)}
-                  >
-                    Delete
-                  </button>
+    <div>
+      <LifeAt 
+        onCategorySelect={(category) => setSelectedCategory(category)}
+        selectedCategory={selectedCategory}
+      />
+      <div className="properties-list-container">
+        <div className="scrollable-container">
+          <div className="properties-list">
+            {filteredProperties.length > 0 ? (
+              filteredProperties.map((property) => (
+                <div key={property._id} className="property-card">
+                  <ImageSlider images={property.images || []} />
+                  <div className="property-info">
+                    <h3>{property.name}</h3>
+                    <h1>{property.description}</h1>
+                    <p>Type - {property.type}</p>
+                    <p>Location - {property.location}</p>
+                    <p>{property.areaInSqFt} Sq Ft</p>
+                    <p>₹{property.price}/-</p>
+                    <button
+                      className="delete-button"
+                      onClick={() => handleDelete(property._id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <p>No properties available.</p>
-          )}
+              ))
+            ) : (
+              <p>Properties Loading...</p>
+            )}
+          </div>
         </div>
       </div>
     </div>

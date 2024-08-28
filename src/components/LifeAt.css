@@ -1,0 +1,52 @@
+/* LifeAt.css */
+
+.life-at-container {
+    padding: 8px;
+    padding-bottom: 0;
+    width: 100%;
+  }
+  
+  .life-at-heading {
+    width: 100%;
+    text-align: left;
+    padding-top: 6px;
+    margin-bottom: 60px;
+    color: #914f1e;
+    border-radius: 8px;
+    letter-spacing: widest;
+  }
+  
+  .life-at-image-container {
+    
+    position: relative;
+    height: 200px; /* Adjust for smaller screens if needed */
+    width: 200px; /* Adjust for smaller screens if needed */
+    margin: 9px;
+    cursor: pointer;
+  }
+  
+  .life-at-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 16px rgba(1, 1, 0, 0.5); /* Adjust for the shadow effect */
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+  }
+  
+  .life-at-image-selected {
+    filter: brightness(0.7);
+  }
+  
+  .life-at-label {
+    position: absolute;
+    padding-left: 6px;
+    padding-bottom: 4px;
+    bottom: 4px;
+    left: 4px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  }
+  

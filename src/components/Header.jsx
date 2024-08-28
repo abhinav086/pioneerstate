@@ -32,7 +32,7 @@ const Header = ({ searchQuery, setSearchQuery, placeholderText = "Search by Name
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const headerStyle = {
-    backdropFilter: "blur(20px)",
+    backdropFilter: "blur(20px)", 
     WebkitBackdropFilter: "blur(20px)", // Adjust the pixel value as needed
   };
 

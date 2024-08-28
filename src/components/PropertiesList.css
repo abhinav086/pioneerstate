@@ -1,35 +1,36 @@
+
 .properties-list-container {
   padding: 20px;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: auto;
-  margin-left: 120px;
-  width: 90%;
-  max-width: 1400px;
-  max-height: 800px;
-  overflow-y: scroll;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 95%;
+  border-radius: 20px; 
+  box-shadow:  0px 4px 8px rgba(0, 0, 0.4, 0.6);
 }
 
 .properties-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }
 
 .property-card {
   display: flex;
-  border: 1px solid #ccc;
+  
   border-radius: 20px; /* Increased border-radius for a more chip-like appearance */
   overflow: hidden;
   background-color: #f9f9f9;
   padding: 20px;
-  height: 400px;
-  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle inset shadow for depth */
+  height: 600px;
+  box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .property-image {
-  width: 600px;
+  width: 800px;
   padding-bottom: 30px;
-  height: 400px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,23 +50,28 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 20px;
+  margin-left: 40px;
   flex-grow: 1;
 }
 
+
 .property-info h3 {
   margin: 0;
-  font-size: 1.6em; /* Increase font size for prominence */
+  font-size: 2em; /* Increase font size for prominence */
   font-weight: bold; /* Make the name bold */
   color: #333; /* Darker color for better readability */
 }
-
+.property-info h1 {
+  font-size: 1em; 
+  font-weight: 800;/* Standardize font size for text below the name */
+  color: rgba(255, 166, 0, 0.945); /* Lighter color for description text */
+}
 .property-info p {
   margin: 8px 0;
-  font-size: 1em; /* Standardize font size for text below the name */
-  color: #666; /* Lighter color for description text */
+  font-size: 1em;
+  font-weight: 800; /* Standardize font size for text below the name */
+  color: #333; /* Lighter color for description text */
 }
-
 /* Style for the delete button to make it resemble a chip */
 .delete-button {
   background-color: rgba(211, 211, 211, 0.591); /* Light grey background */

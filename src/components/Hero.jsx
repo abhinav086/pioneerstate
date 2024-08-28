@@ -35,7 +35,7 @@ const Hero = () => {
         shadow={'2xl'}
         h={['100%', '100%']}
         boxSizing='border-box'
-        mt={['14', '16']}
+        mt={['14', '16','40']}
 
 
       >

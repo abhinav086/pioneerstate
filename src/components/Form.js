@@ -110,7 +110,7 @@ function Form() {
   return (
     <div>
       <form className="form-container" onSubmit={handleSubmit}>
-        <h2>Upload Property</h2>
+        <h1>Upload Property</h1>
         {error && <div className="error-message">{error}</div>}
 
         <div className="form-group">
