@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://imgbackend-6dgr.onrender.com/0auth/signup', {
+      const response = await axios.post('https://imgbackend-h3dn.onrender.com/0auth/signup', {
         username,
         email,
         password

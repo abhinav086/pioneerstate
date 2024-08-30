@@ -14,7 +14,7 @@ function PropertiesList({ searchQuery }) {
 
   const fetchProperties = async () => {
     try {
-      const response = await fetch('https://imgbackend-6dgr.onrender.com/api/properties');
+      const response = await fetch('https://imgbackend-h3dn.onrender.com/api/properties');
       if (response.ok) {
         const data = await response.json();
         setProperties(data);
@@ -28,7 +28,7 @@ function PropertiesList({ searchQuery }) {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`https://imgbackend-6dgr.onrender.com/api/properties/${id}`, {
+      const response = await fetch(`https://imgbackend-h3dn.onrender.com/api/properties/${id}`, {
         method: 'DELETE',
       });
 

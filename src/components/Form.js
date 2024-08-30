@@ -70,7 +70,7 @@ function Form() {
     setError('');
 
     try {
-      const response = await fetch('https://imgbackend-6dgr.onrender.com/api/properties', {
+      const response = await fetch('https://imgbackend-h3dn.onrender.com/api/properties', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

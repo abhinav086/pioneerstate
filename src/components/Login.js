@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://imgbackend-6dgr.onrender.com/0auth/login', {
+      const response = await axios.post('https://imgbackend-h3dn.onrender.com/0auth/login', {
         email,
         password
       });
