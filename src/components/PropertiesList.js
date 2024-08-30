@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ImageSlider from './ImageSlider'; 
 import '../components/PropertiesList.css';
 import LifeAt from './LifeAt';
+import '../components/PropertiesList.css';
 
 function PropertiesList({ searchQuery }) {
   const [properties, setProperties] = useState([]);
