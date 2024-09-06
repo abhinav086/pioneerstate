@@ -9,10 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false); // New loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
+
     try {
       const response = await axios.post('https://imgbackend-h3dn.onrender.com/0auth/login', {
         email,
@@ -30,14 +33,13 @@ const Login = () => {
       }
     } catch (error) {
       setMessage('An error occurred: ' + error.message);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
   return (
     <div className="container">
-      <div className="image-side">
-        {/* Replace 'your-image.jpg' with the actual path to your image */}
-      </div>
       <div className="login-side">
         <div className="login-container">
           <h2>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕰𝖘𝖙𝖆𝖙𝖊</h2>
@@ -68,7 +70,9 @@ const Login = () => {
                 {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
               </button>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" disabled={loading}>
+              {loading ? 'Loading...' : 'Login'}
+            </button>
           </form>
           {message && <p className="message">{message}</p>}
           <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
