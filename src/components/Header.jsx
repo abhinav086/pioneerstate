@@ -61,7 +61,7 @@ const Header = ({ searchQuery, setSearchQuery, placeholderText = "Search by Name
       {/* Left side: Logo */}
       <HStack spacing={4} flex="1">
         <Link to="/home">
-          <Heading fontSize={'32px'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕰𝖘𝖙𝖆𝖙𝖊</Heading>
+          <Heading fontSize={'32px'}>𝓣𝓱𝓮 𝓝𝓮𝔁𝓽 𝓗𝓸𝓶𝓮𝓼</Heading>
         </Link>
       </HStack>
       
@@ -118,7 +118,7 @@ const Header = ({ searchQuery, setSearchQuery, placeholderText = "Search by Name
         <DrawerContent fontSize={'24'} textColor={'white'} style={{backgroundColor:'rgba(0,0,0,0.6)'}} >
           <DrawerCloseButton fontSize={'24'} />
           <DrawerHeader>
-            <Heading textColor={'white'} fontSize={'md'}>𝕻𝖎𝖔𝖓𝖊𝖊𝖗 𝕰𝖘𝖙𝖆𝖙𝖊</Heading>
+            <Heading textColor={'white'} fontSize={'md'}>𝓣𝓱𝓮 𝓝𝓮𝔁𝓽 𝓗𝓸𝓶𝓮𝓼</Heading>
           </DrawerHeader>
           <DrawerBody>
             <VStack spacing={12} onClick={onClose}>
